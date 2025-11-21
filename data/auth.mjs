@@ -72,3 +72,7 @@ export async function login(userid, password) {
 }
 
 // 로그인 유지
+export async function findByUserid(userid) {
+  const user = users.find((user) => user.userid === userid);
+  return user;
+}
