@@ -41,6 +41,14 @@ let users = [
   },
 ];
 
+export async function getAll() {
+  return auth;
+}
+
+export async function getAllByUserid(userid) {
+  return auth.filter((auth) => auth.userid === userid);
+}
+
 // 회원가입
 export async function createUser(userid, password, name, email) {
   const user = {
