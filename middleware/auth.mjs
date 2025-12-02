@@ -10,7 +10,8 @@ export const isAuth = async (req, res, next) => {
 
   if (!(authHeader && authHeader.startsWith("Bearer "))) {
     console.log("헤더 에러");
-    return resizeBy.status(401).json(AUTH_ERROR);
+    return res.status(401).json(AUTH_ERROR);
+    AUTH_ERROR;
   }
 
   //Authorization: Bearer QEWDFADFEVSDSDTSDFVCE== 비어러부터시작한 전체가 헤더. 띄어쓰기 기반 1번은 토큰

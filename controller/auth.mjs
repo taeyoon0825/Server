@@ -28,9 +28,8 @@ export async function signup(req, res, next) {
     url,
   });
   //   const user = await authRepository.createUser(userid, password, name, email);
-  const token = await createJwtToken(user.id);
-  console.log(token);
-  res.status(201).json({ token, user });
+  const token = await createJwtToken(user);
+  res.status(201).json({ token, userid });
 }
 
 export async function login(req, res, next) {
